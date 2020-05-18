@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #797979
+}
+
+.game_wrapper {
+  display: flex;
+  height: 100vh;
+  .left_side {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    border-right: 3px solid #9b9b9b;
+  }
+
+  .right_side {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  input {
+    border-radius: 3px;
+    border: 1px solid #dfdfdf;
+    background-color: #ececec;
+    padding: 0 10px;
+    color: #797979;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    &::placeholder {
+      color: #9b9b9b
+    }
+  }
+
+  button {
+    background-color: #6b6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    font-size: inherit;
+    cursor: pointer;
+
+    &:disabled {
+      color: #9b9b9b;
+    }
+  }
+}
+
+.game_select {
+  position: relative;
+
+  .current {
+    background-color: #dfdfdf;
+    display: inline-flex;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 150px;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .game_options {
+    display: none;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 150px;
+    justify-content: center;
+    left: 0;
+    top: 30px;
+    background-color: #ffffff;
+    flex-direction: column;
+
+    div {
+      cursor: pointer;
+      padding: 5px 0;
+    }
+  }
+
+  &.open .game_options {
+    display: inline-flex;
+  }
+}
+
+.message {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.game_fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.field {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dfdfdf;
+
+  &.free {
+    background-color: #ffffff;
+  }
+  
+  &.active {
+    background-color: #7fb0e9;
+  } 
+  
+  &.human {
+    background-color: #b0eb79;
+  }
+  
+  &.comp {
+    background-color: #ff7979;
+  }
+}
+
+.winner_wrapper {
+  .winner_head {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .winners {
+    font-size: 20px;
+    div {
+      display: flex;
+      justify-content: space-between;
+      background-color: #dfdfdf;
+      padding: 10px;
+      margin-bottom: 5px;
+      max-width: 400px;
+    }
+  }
+}
